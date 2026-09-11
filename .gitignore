@@ -3,3 +3,4 @@ dist/
 .env
 backend/.env
 backend/educopilot_backup.sql
+educopilot_render.sql

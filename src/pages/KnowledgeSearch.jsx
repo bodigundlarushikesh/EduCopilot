@@ -137,7 +137,7 @@ const KnowledgeSearch = () => {
         params.set('limit', '50')
 
         const response = await fetch(
-          `http://localhost:5000/api/knowledge?${params.toString()}`,
+          `${import.meta.env.VITE_API_URL}/api/knowledge?${params.toString()}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,

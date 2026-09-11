@@ -64,19 +64,18 @@ const ExecutiveQA = () => {
 
     try {
       const response = await fetch(
-        'http://localhost:5000/api/qa',
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            Authorization: `Bearer ${token}`,
+          `${import.meta.env.VITE_API_URL}/api/qa`,
+          {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              Authorization: `Bearer ${token}`,
+            },
+            body: JSON.stringify({
+              question: cleanQuestion,
+            }),
           },
-          body: JSON.stringify({
-            question: cleanQuestion,
-          }),
-        },
-      )
-
+        )
       const result = await response.json()
 
       if (!response.ok || !result.success) {
